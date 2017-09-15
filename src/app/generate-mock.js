@@ -35,11 +35,11 @@ function getRandomPerson() {
     'max': 49
   })
 
-  return persons.filter( person => person.id === randomId );
+  return persons.filter( person => person.id === randomId )[0];
 }
 
 function generatePost () {
-  for (var id = 0; id < 10; id++) {
+  for (var id = 0; id < 20; id++) {
     faker.locale = "es"
 
     var publish = faker.date.past()

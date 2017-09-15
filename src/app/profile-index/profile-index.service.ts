@@ -6,15 +6,13 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class ProfileIndexService {
 
-    id: number;
-    catsURL = 'http://localhost:3000/persons';
+    catsURL = 'http://localhost:3000/persons/3';
 
     constructor(private http: Http) {
-        this.id = 2;
     }
 
-    getPerson(): Observable<Person[]> {
-        return this.http.get(`${this.catsURL}/${this.id}`)
+    getPersons(): Observable<Person[]> {
+        return this.http.get(this.catsURL)
             .map( (res: Response) => res.json())
             .catch( (error: any) => Observable.throw(error.json().error || 'Server error') );
     }
