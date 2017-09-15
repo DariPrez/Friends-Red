@@ -6,17 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProfileIndexComponent } from './profile-index/profile-index.component';
+import { ProfileIndexService } from './profile-index/profile-index.service';
 
 
 const appRoutes: Routes = [
-  { path: 'order', component: '' },
+  // { path: 'order', component: OrderComponent },
   {
     path: 'profile',
-    component: 'ProfileIndexComponent',
-    data: { title: 'Friends Red' }
+    component: ProfileIndexComponent,
+    data: { title: 'Cats List' }
   },
   { path: '',
-    redirectTo: '/profile',
+    redirectTo: '/item-list',
     pathMatch: 'full'
   }
   // { path: '**', component: PageNotFoundComponent }
@@ -37,7 +38,7 @@ const appRoutes: Routes = [
     )
     // other imports here
   ],
-  providers: [],
+  providers: [ProfileIndexService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
