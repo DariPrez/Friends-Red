@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Person } from './person.model';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ProfileIndexService } from './profile-index.service';
+import { Person } from './person.model';
 
 @Component({
   selector: 'app-profile-index',
@@ -9,16 +9,13 @@ import { ProfileIndexService } from './profile-index.service';
 })
 export class ProfileIndexComponent implements OnInit {
 
-  person: Person[];
-
-
-
+  myPerson: Person;
 
   constructor(private profileIndexService: ProfileIndexService) {  }
 
   ngOnInit() {
-    this.profileIndexService.getPersons()
-                            .subscribe(person => this.person = person);
+    this.profileIndexService.getPerson()
+                            .subscribe(myPerson => this.myPerson = myPerson);
   }
 
 }

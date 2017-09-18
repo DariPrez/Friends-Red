@@ -1,14 +1,11 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm-6">
+    <div class="row justify-content-center">
+        <div class="col-sm-2">
             <div class="card">
                 <div class="card-block">
                     <section class="section">
-                        <article class="col-xs-3">
-                            <img src="{{person.picture}}" class="rounded-circle">
-                            <h2>{{person.first_name}} {{person.last_name}}</h2>
-                            <h6>{{person.city}}</h6>
-                            <h4>{{person.country}}</h4>
+                        <article class="col-xs-1">
+                            <img src="{{myPerson.picture}}" class="rounded-circle">
                         </article>
                     </section>
                 </div>
@@ -17,10 +14,9 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-block">
-                    <h2>{{person.first_name}} {{person.last_name}}</h2>
-                    <h6>{{person.city}}</h6>
-                    <h4>{{person.country}}</h4>
-                    <input
+                    <h2>{{myPerson.first_name}} {{myPerson.last_name}}</h2>
+                    <h6>{{myPerson.city}}</h6>
+                    <h4>{{myPerson.country}}</h4>              
                 </div>
             </div>
         </div>

@@ -7,17 +7,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ProfileIndexComponent } from './profile-index/profile-index.component';
 import { ProfileIndexService } from './profile-index/profile-index.service';
+import { PostIndexComponent } from './post-index/post-index.component';
+import { StuffComponent } from './stuff/stuff.component';
+import { ProfileComponent } from './stuff/profile/profile.component';
+import { PostComponent } from './post-index/post/post.component';
+import { PostService } from './post-index/post/post.service';
 
 
 const appRoutes: Routes = [
-  // { path: 'order', component: OrderComponent },
+  { path: 'posts', component: PostIndexComponent },
   {
-    path: 'profile',
-    component: ProfileIndexComponent,
-    data: { title: 'Cats List' }
+    path: 'stuff', component: StuffComponent,
   },
   { path: '',
-    redirectTo: '/item-list',
+    redirectTo: '/stuff',
     pathMatch: 'full'
   }
   // { path: '**', component: PageNotFoundComponent }
@@ -26,7 +29,11 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileIndexComponent
+    ProfileIndexComponent,
+    PostComponent,
+    PostIndexComponent,
+    StuffComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,10 @@ const appRoutes: Routes = [
     )
     // other imports here
   ],
-  providers: [ProfileIndexService],
+  providers: [
+    ProfileIndexService,
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

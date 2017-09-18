@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-2">
+            <div class="card">
+                <div class="card-block">
+                    <section class="section">
+                        <article class="col-xs-1">
+                            <img src="{{myPerson.picture}}" class="rounded-circle">
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-block">
+                    <h2 *ngIf="!submitted">{{myPerson.first_name}} {{myPerson.last_name}}</h2>
+                    <h4 *ngIf="submitted">Name: <input type="text" [(ngModel)]="myPerson.first_name"></h4>
+                    <h4 *ngIf="submitted">Last Name: <input type="text" [(ngModel)]="myPerson.last_name"></h4>
+                    <h6 *ngIf="!submitted">{{myPerson.city}}</h6>
+                    <h4 *ngIf="submitted">City: <input type="text" [(ngModel)]="myPerson.city"></h4>
+                    <h4 *ngIf="!submitted">{{myPerson.country}}</h4>
+                    <h4 *ngIf="submitted">Country: <input type="text" [(ngModel)]="myPerson.country"></h4>
+                    <button class="btn btn-primary" (click)="getUpdateService(myPerson,submitted)">Edit</button>                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
