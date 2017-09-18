@@ -1,16 +1,3 @@
-<div class="container bg-info text-white">
-    <div class="container" [hidden]="!submitted">
-        Post Published!
-        </div>
-    <form (ngSubmit)="getUpdateService(model,submitted)" #postForm="ngForm">
-    <div class="form-group">
-      <label for="text">What are you thinking?</label>
-      <textarea class="form-control" id="text" rows="3" required
-      [(ngModel)]="model.text" name="text" #name="ngModel"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success" [disabled]="!postForm.form.valid">Send</button>
-  </form>
-  </div>
   <div class="container bg-info">
       <label class="text-white">Publish</label>
 <div class="card" *ngFor="let post of posts">

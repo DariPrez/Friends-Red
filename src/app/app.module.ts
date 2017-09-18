@@ -12,6 +12,7 @@ import { StuffComponent } from './stuff/stuff.component';
 import { ProfileComponent } from './stuff/profile/profile.component';
 import { PostComponent } from './post-index/post/post.component';
 import { PostService } from './post-index/post/post.service';
+import { PublishComponent } from './post-index/publish/publish.component';
 
 
 const appRoutes: Routes = [
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     PostComponent,
     PostIndexComponent,
     StuffComponent,
-    ProfileComponent
+    ProfileComponent,
+    PublishComponent
   ],
   imports: [
     BrowserModule,
